@@ -5,6 +5,15 @@
 (function () {
   "use strict";
 
+  /* ---- Backend API base URL ----
+     Uses localhost during local development and the deployed backend in production.
+     Override anytime by setting window.API_BASE_URL before this script loads. */
+  const API_BASE_URL =
+    window.API_BASE_URL ||
+    (["localhost", "127.0.0.1"].includes(location.hostname)
+      ? "http://localhost:4000"
+      : "https://diego-cerri-hr-app-be.vercel.app");
+
   /* ---- Ano no rodapé ---- */
   document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -247,7 +256,7 @@
     submitBtn.textContent = "Enviando...";
 
     try {
-      const response = await fetch("http://localhost:4000/api/candidates/", {
+      const response = await fetch(`${API_BASE_URL}/api/candidates/`, {
         method: "POST",
         body: fd,
         // Do NOT set Content-Type manually — browser sets it with the correct boundary for multipart
