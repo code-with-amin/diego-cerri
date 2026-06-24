@@ -156,6 +156,13 @@
       ok = false; firstInvalid = firstInvalid || valor;
     }
 
+    // anos de experiência (0–100, igual à validação do backend)
+    const anos = document.getElementById("yearsExperience");
+    if (anos.value && (Number(anos.value) < 0 || Number(anos.value) > 100)) {
+      setError(anos, "Informe um valor entre 0 e 100 anos.");
+      ok = false; firstInvalid = firstInvalid || anos;
+    }
+
     // currículo
     if (!fileInput.files.length) {
       dzError.textContent = "Anexe seu currículo em PDF.";
@@ -265,7 +272,16 @@
       if (!response.ok) {
         const body = await response.json().catch(() => null);
         console.error("[candidates] server error response:", body);
-        throw new Error(body?.error?.message || `HTTP ${response.status}`);
+        // Surface the backend's per-field validation details when present.
+        const details = body?.error?.details;
+        let detailMsg = "";
+        if (details && typeof details === "object") {
+          detailMsg = Object.entries(details)
+            .map(([field, msgs]) => `${field}: ${[].concat(msgs).join(", ")}`)
+            .join("\n");
+        }
+        const baseMsg = body?.error?.message || `HTTP ${response.status}`;
+        throw new Error(detailMsg ? `${baseMsg}\n${detailMsg}` : baseMsg);
       }
 
       // Success — show modal
