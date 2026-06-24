@@ -163,6 +163,13 @@
       ok = false; firstInvalid = firstInvalid || anos;
     }
 
+    // expectativa mensal (>= 0, igual à validação do backend)
+    const mensal = document.getElementById("monthlyExpectation");
+    if (mensal.value && Number(mensal.value) < 0) {
+      setError(mensal, "Informe um valor maior ou igual a 0.");
+      ok = false; firstInvalid = firstInvalid || mensal;
+    }
+
     // currículo
     if (!fileInput.files.length) {
       dzError.textContent = "Anexe seu currículo em PDF.";
