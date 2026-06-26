@@ -16,8 +16,7 @@
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <a href="#" class="brand" aria-label="KPI Engenharia">
-        <span class="brand-badge">KPI</span>
-        <span class="brand-text">Engenharia</span>
+        <img src="logo.png" alt="KPI Engenharia" class="brand-logo" />
       </a>
       <nav class="main-nav" aria-label="Navegação principal">
         <a href="https://www.kpiengenharia.com.br" target="_blank" rel="noopener" data-i18n="nav_home">Home</a>
@@ -32,21 +31,6 @@
       </nav>
     </div>
   </header>
-
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <span class="hero-eyebrow" data-i18n="hero_eyebrow">Trabalhe Conosco</span>
-      <h1 data-i18n="hero_title">Faça parte do time de engenharia da KPI</h1>
-      <p class="hero-sub" data-i18n="hero_sub">
-        Buscamos talentos em projetos industriais, mecânica, piping, elétrica,
-        automação, estrutural e BIM. Cadastre seus dados e seu currículo —
-        entraremos em contato quando houver uma oportunidade alinhada ao seu perfil.
-      </p>
-      <a href="#form-cadastro" class="btn btn-primary btn-lg" data-i18n="hero_cta">Quero me cadastrar</a>
-    </div>
-  </section>
 
   <!-- ===== FORM ===== -->
   <main class="form-section" id="form-cadastro">
@@ -79,8 +63,13 @@
                 <small class="error-msg"></small>
               </div>
               <div class="field">
-                <label for="city" data-i18n="label_city" data-i18n-html="true">Cidade / Estado <span class="req">*</span></label>
-                <input type="text" id="city" name="city" placeholder="Ex.: Rio Claro / SP" data-i18n-ph="ph_city" required />
+                <label for="city" data-i18n="label_city" data-i18n-html="true">Cidade <span class="req">*</span></label>
+                <input type="text" id="city" name="city" placeholder="Ex.: Rio Claro" data-i18n-ph="ph_city" required autocomplete="address-level2" />
+                <small class="error-msg"></small>
+              </div>
+              <div class="field">
+                <label for="state" data-i18n="label_state" data-i18n-html="true">Estado <span class="req">*</span></label>
+                <input type="text" id="state" name="state" placeholder="Ex.: SP" data-i18n-ph="ph_state" required autocomplete="address-level1" />
                 <small class="error-msg"></small>
               </div>
               <div class="field">
@@ -299,8 +288,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <span class="brand-badge">KPI</span>
-        <span class="brand-text">Engenharia</span>
+        <img src="logo.png" alt="KPI Engenharia" class="footer-logo" />
       </div>
       <p class="footer-tag" data-i18n="footer_tag">Soluções completas em engenharia industrial com precisão técnica e integração total.</p>
       <p class="footer-copy">© <span id="year"></span> KPI Engenharia. <span data-i18n="footer_rights">Todos os direitos reservados.</span></p>

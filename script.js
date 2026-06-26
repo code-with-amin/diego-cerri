@@ -52,8 +52,10 @@
       ph_email: "seu@email.com",
       label_phone: 'Telefone / WhatsApp <span class="req">*</span>',
       ph_phone: "(00) 00000-0000",
-      label_city: 'Cidade / Estado <span class="req">*</span>',
-      ph_city: "Ex.: Rio Claro / SP",
+      label_city: 'Cidade <span class="req">*</span>',
+      ph_city: "Ex.: Rio Claro",
+      label_state: 'Estado <span class="req">*</span>',
+      ph_state: "Ex.: SP",
       label_country: 'País <span class="req">*</span>',
       ph_country: "Ex.: Brasil",
       label_linkedin: "LinkedIn / Portfólio",
@@ -168,8 +170,10 @@
       ph_email: "you@email.com",
       label_phone: 'Phone / WhatsApp <span class="req">*</span>',
       ph_phone: "(00) 00000-0000",
-      label_city: 'City / State <span class="req">*</span>',
-      ph_city: "e.g. Rio Claro / SP",
+      label_city: 'City <span class="req">*</span>',
+      ph_city: "e.g. Rio Claro",
+      label_state: 'State <span class="req">*</span>',
+      ph_state: "e.g. SP",
       label_country: 'Country <span class="req">*</span>',
       ph_country: "e.g. Brazil",
       label_linkedin: "LinkedIn / Portfolio",
@@ -424,7 +428,7 @@
     let ok = true;
     let firstInvalid = null;
 
-    const required = ["name", "email", "phone", "city", "country", "pastWork", "hourlyRate"];
+    const required = ["name", "email", "phone", "city", "state", "country", "pastWork", "hourlyRate"];
     required.forEach(id => {
       const f = document.getElementById(id);
       if (!f.value.trim()) {
@@ -510,6 +514,7 @@
       email:              document.getElementById("email").value.trim(),
       phone:              document.getElementById("phone").value.trim(),
       city:               document.getElementById("city").value.trim(),
+      state:              document.getElementById("state").value.trim(),
       country:            document.getElementById("country").value.trim(),
       linkedin:           document.getElementById("linkedin").value.trim(),
       birthDate:          document.getElementById("birthDate").value,
