@@ -177,6 +177,9 @@ h1, h2, h3, legend { font-family: var(--font-head); letter-spacing: -.01em; }
 
 .field { display: flex; flex-direction: column; margin-top: 16px; }
 .field:first-of-type { margin-top: 6px; }
+/* Inside a grid, vertical spacing comes from `gap`; per-field margins would
+   offset the first cell of each row and break alignment with its neighbor. */
+.grid .field { margin-top: 0; }
 .field label { font-weight: 600; font-size: .92rem; color: var(--ink); margin-bottom: 7px; }
 .req { color: #e23b3b; font-weight: 700; }
 
