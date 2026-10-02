@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trabalhe Conosco — KPI Engenharia</title>
+  <meta name="description" content="Cadastre seu currículo e faça parte do time de engenharia da KPI. Projetos industriais, BIM, mecânica, elétrica, automação e piping." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@300;400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#" class="brand" aria-label="KPI Engenharia">
+        <img src="logo.png" alt="KPI Engenharia" class="brand-logo" />
+      </a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="https://www.kpiengenharia.com.br" target="_blank" rel="noopener" data-i18n="nav_home">Home</a>
+        <a href="https://www.kpiengenharia.com.br" target="_blank" rel="noopener" data-i18n="nav_services">Serviços</a>
+        <a href="https://www.kpiengenharia.com.br" target="_blank" rel="noopener" data-i18n="nav_projects">Projetos</a>
+        <a href="#" id="hrAreaLink" class="nav-hr" rel="noopener" data-i18n="nav_hr">Área do RH</a>
+        <a href="#form-cadastro" class="nav-cta" data-i18n="nav_register">Cadastre-se</a>
+        <div class="lang-switch" role="group" aria-label="Idioma / Language">
+          <button type="button" class="lang-btn" data-lang="pt">PT</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== FORM ===== -->
+  <main class="form-section" id="form-cadastro">
+    <div class="container">
+      <div class="form-card">
+        <header class="form-card-head">
+          <h2 data-i18n="form_title">Cadastro de Candidato</h2>
+          <p data-i18n="form_subtitle" data-i18n-html="true">Preencha as informações abaixo. Campos marcados com <span class="req">*</span> são obrigatórios.</p>
+        </header>
+
+        <form id="candidateForm" novalidate>
+
+          <!-- 1. DADOS DE CONTATO -->
+          <fieldset class="form-block">
+            <legend><span class="step-num">1</span> <span data-i18n="legend_contact">Informações de contato</span></legend>
+            <div class="grid grid-2">
+              <div class="field">
+                <label for="name" data-i18n="label_name" data-i18n-html="true">Nome completo <span class="req">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Seu nome completo" data-i18n-ph="ph_name" required autocomplete="name" />
+                <small class="error-msg"></small>
+              </div>
+              <div class="field">
+                <label for="email" data-i18n="label_email" data-i18n-html="true">E-mail <span class="req">*</span></label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" data-i18n-ph="ph_email" required autocomplete="email" />
+                <small class="error-msg"></small>
+              </div>
+              <div class="field">
+                <label for="phone" data-i18n="label_phone" data-i18n-html="true">Telefone / WhatsApp <span class="req">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="(00) 00000-0000" data-i18n-ph="ph_phone" required autocomplete="tel" />
+                <small class="error-msg"></small>
+              </div>
+              <div class="field">
+                <label for="city" data-i18n="label_city" data-i18n-html="true">Cidade <span class="req">*</span></label>
+                <input type="text" id="city" name="city" placeholder="Ex.: Rio Claro" data-i18n-ph="ph_city" required autocomplete="address-level2" />
+                <small class="error-msg"></small>
+              </div>
+              <div class="field">
+                <label for="state" data-i18n="label_state" data-i18n-html="true">Estado <span class="req">*</span></label>
+                <input type="text" id="state" name="state" placeholder="Ex.: SP" data-i18n-ph="ph_state" required autocomplete="address-level1" />
+                <small class="error-msg"></small>
+              </div>
+              <div class="field">
+                <label for="country" data-i18n="label_country" data-i18n-html="true">País <span class="req">*</span></label>
+                <input type="text" id="country" name="country" placeholder="Ex.: Brasil" data-i18n-ph="ph_country" required autocomplete="country-name" />
+                <small class="error-msg"></small>
+              </div>
+              <div class="field">
+                <label for="linkedin" data-i18n="label_linkedin">LinkedIn / Portfólio</label>
+                <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/seu-perfil" data-i18n-ph="ph_linkedin" />
+                <small class="error-msg"></small>
+              </div>
+              <div class="field">
+                <label for="birthDate" data-i18n="label_birth">Data de nascimento</label>
+                <input type="date" id="birthDate" name="birthDate" />
+                <small class="error-msg"></small>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- 2. CURRICULO -->
+          <fieldset class="form-block">
+            <legend><span class="step-num">2</span> <span data-i18n="legend_resume">Currículo (PDF)</span></legend>
+            <div class="field">
+              <label for="resume" data-i18n="label_resume" data-i18n-html="true">Anexe seu currículo <span class="req">*</span></label>
+              <div class="dropzone" id="dropzone">
+                <input type="file" id="resume" name="resume" accept="application/pdf,.pdf" required hidden />
+                <div class="dropzone-inner">
+                  <svg class="dz-icon" viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <path d="M12 16V4m0 0l-4 4m4-4l4 4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <p class="dz-text" data-i18n="dz_text" data-i18n-html="true"><strong>Clique para selecionar</strong> ou arraste o arquivo aqui</p>
+                  <p class="dz-hint" data-i18n="dz_hint">Apenas PDF — máximo 10&nbsp;MB</p>
+                </div>
+                <div class="dz-file" id="dzFile" hidden>
+                  <span class="dz-file-name" id="dzFileName"></span>
+                  <button type="button" class="dz-remove" id="dzRemove" aria-label="Remover arquivo">&times;</button>
+                </div>
+              </div>
+              <small class="error-msg" id="resumeError"></small>
+            </div>
+          </fieldset>
+
+          <!-- 3. MODALIDADE E DISPONIBILIDADE -->
+          <fieldset class="form-block">
+            <legend><span class="step-num">3</span> <span data-i18n="legend_modality">Modalidade e disponibilidade</span></legend>
+            <div class="field">
+              <label data-i18n="label_modality" data-i18n-html="true">Modalidade de interesse <span class="req">*</span></label>
+              <div class="chip-group" role="group" aria-label="Modalidade de interesse">
+                <label class="chip"><input type="checkbox" name="modality" value="Full time" /> <span data-i18n="opt_full_time">Full time</span></label>
+                <label class="chip"><input type="checkbox" name="modality" value="Spot / temporary" /> <span data-i18n="opt_spot">Spot / temporário</span></label>
+                <label class="chip"><input type="checkbox" name="modality" value="Freelancer / per project" /> <span data-i18n="opt_freelancer">Freelancer / por projeto</span></label>
+                <label class="chip"><input type="checkbox" name="modality" value="Internship" /> <span data-i18n="opt_internship">Estágio</span></label>
+              </div>
+              <small class="error-msg" id="modalityError"></small>
+            </div>
+
+            <div class="grid grid-2">
+              <div class="field">
+                <label for="hoursPerDay" data-i18n="label_hours" data-i18n-html="true">Horas disponíveis por dia <span class="req">*</span></label>
+                <div class="range-wrap">
+                  <input type="range" id="hoursPerDay" name="hoursPerDay" min="1" max="12" step="1" value="8" />
+                  <output id="hoursOut" class="range-out">8h</output>
+                </div>
+                <small class="error-msg"></small>
+              </div>
+              <div class="field">
+                <label for="workMode" data-i18n="label_workmode">Regime de trabalho preferido</label>
+                <select id="workMode" name="workMode">
+                  <option value="" data-i18n="opt_select">Selecione...</option>
+                  <option value="On-site" data-i18n="opt_onsite">Presencial</option>
+                  <option value="Hybrid" data-i18n="opt_hybrid">Híbrido</option>
+                  <option value="Remote" data-i18n="opt_remote">Remoto</option>
+                  <option value="No preference" data-i18n="opt_nopref">Indiferente</option>
+                </select>
+                <small class="error-msg"></small>
+              </div>
+              <div class="field">
+                <label for="startAvailability" data-i18n="label_start">Disponibilidade para início</label>
+                <select id="startAvailability" name="startAvailability">
+                  <option value="" data-i18n="opt_select">Selecione...</option>
+                  <option value="Immediate" data-i18n="opt_immediate">Imediata</option>
+                  <option value="Within 15 days" data-i18n="opt_15days">Em até 15 dias</option>
+                  <option value="Within 30 days" data-i18n="opt_30days">Em até 30 dias</option>
+                  <option value="Within 60 days" data-i18n="opt_60days">Em até 60 dias</option>
+                </select>
+                <small class="error-msg"></small>
+              </div>
+              <div class="field">
+                <label data-i18n="label_travel" data-i18n-html="true">Disponibilidade para viagens <span class="req">*</span></label>
+                <div class="chip-group" role="group" aria-label="Disponibilidade para viagens">
+                  <label class="chip chip-radio"><input type="radio" name="travel" value="Yes, unrestricted" /> <span data-i18n="opt_travel_yes">Sim</span></label>
+                  <label class="chip chip-radio"><input type="radio" name="travel" value="Yes, occasionally" /> <span data-i18n="opt_travel_occ">Eventualmente</span></label>
+                  <label class="chip chip-radio"><input type="radio" name="travel" value="No" /> <span data-i18n="opt_travel_no">Não</span></label>
+                </div>
+                <small class="error-msg" id="travelError"></small>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- 4. AREAS DE CONHECIMENTO -->
+          <fieldset class="form-block">
+            <legend><span class="step-num">4</span> <span data-i18n="legend_areas">Áreas de conhecimento</span></legend>
+            <div class="field">
+              <label data-i18n="label_areas" data-i18n-html="true">Selecione suas áreas de atuação <span class="req">*</span></label>
+              <div class="chip-group chip-group-wrap" role="group" aria-label="Áreas de conhecimento">
+                <label class="chip"><input type="checkbox" name="areas" value="Piping" /> <span data-i18n="area_piping">Tubulação / Piping</span></label>
+                <label class="chip"><input type="checkbox" name="areas" value="Industrial Mechanics" /> <span data-i18n="area_mechanics">Mecânica industrial</span></label>
+                <label class="chip"><input type="checkbox" name="areas" value="Structural" /> <span data-i18n="area_structural">Estrutural</span></label>
+                <label class="chip"><input type="checkbox" name="areas" value="Electrical" /> <span data-i18n="area_electrical">Elétrica</span></label>
+                <label class="chip"><input type="checkbox" name="areas" value="Automation" /> <span data-i18n="area_automation">Automação</span></label>
+                <label class="chip"><input type="checkbox" name="areas" value="HVAC" /> <span data-i18n="area_hvac">HVAC</span></label>
+                <label class="chip"><input type="checkbox" name="areas" value="Fire Protection (NFPA/ABNT)" /> <span data-i18n="area_fire">Combate a incêndio</span></label>
+                <label class="chip"><input type="checkbox" name="areas" value="BIM / 3D Modeling" /> <span data-i18n="area_bim">BIM / Modelagem 3D</span></label>
+                <label class="chip"><input type="checkbox" name="areas" value="3D Scanning / Survey" /> <span data-i18n="area_scan">3D Scanning</span></label>
+                <label class="chip"><input type="checkbox" name="areas" value="Project Management" /> <span data-i18n="area_pm">Gestão de projetos</span></label>
+                <label class="chip"><input type="checkbox" name="areas" value="Technical Documentation" /> <span data-i18n="area_docs">Documentação técnica</span></label>
+                <label class="chip"><input type="checkbox" name="areas" value="VR / Virtual Reality" /> <span data-i18n="area_vr">VR / Realidade Virtual</span></label>
+              </div>
+              <small class="error-msg" id="areasError"></small>
+            </div>
+            <div class="field">
+              <label for="software" data-i18n="label_software">Softwares e ferramentas que domina</label>
+              <input type="text" id="software" name="software" placeholder="Ex.: AutoCAD, Revit, Navisworks, SolidWorks, E3D, Excel..." data-i18n-ph="ph_software" />
+              <small class="hint-msg" data-i18n="hint_software">Separe por vírgulas.</small>
+            </div>
+            <div class="field">
+              <label for="seniority" data-i18n="label_seniority">Nível de senioridade</label>
+              <select id="seniority" name="seniority">
+                <option value="" data-i18n="opt_select">Selecione...</option>
+                <option value="Junior" data-i18n="sen_junior">Júnior</option>
+                <option value="Mid-level" data-i18n="sen_mid">Pleno</option>
+                <option value="Senior" data-i18n="sen_senior">Sênior</option>
+                <option value="Specialist" data-i18n="sen_specialist">Especialista</option>
+                <option value="Coordinator / Lead" data-i18n="sen_lead">Coordenador / Líder</option>
+              </select>
+            </div>
+          </fieldset>
+
+          <!-- 5. EXPERIENCIA -->
+          <fieldset class="form-block">
+            <legend><span class="step-num">5</span> <span data-i18n="legend_experience">Experiência e capacidades</span></legend>
+            <div class="field">
+              <label for="pastWork" data-i18n="label_pastwork" data-i18n-html="true">Trabalhos que já executou <span class="req">*</span></label>
+              <textarea id="pastWork" name="pastWork" rows="4" placeholder="Descreva projetos relevantes, setores e seu papel em cada um..." data-i18n-ph="ph_pastwork" required></textarea>
+              <small class="error-msg"></small>
+            </div>
+            <div class="field">
+              <label for="potentialWork" data-i18n="label_potential">Trabalhos que pode executar</label>
+              <textarea id="potentialWork" name="potentialWork" rows="3" placeholder="Quais tipos de projeto/atividade você está apto a assumir..." data-i18n-ph="ph_potential"></textarea>
+            </div>
+            <div class="field">
+              <label for="yearsExperience" data-i18n="label_years">Anos de experiência</label>
+              <input type="number" id="yearsExperience" name="yearsExperience" min="0" max="100" placeholder="Ex.: 5" data-i18n-ph="ph_years" />
+            </div>
+          </fieldset>
+
+          <!-- 6. REMUNERACAO -->
+          <fieldset class="form-block">
+            <legend><span class="step-num">6</span> <span data-i18n="legend_comp">Remuneração e observações</span></legend>
+            <div class="grid grid-2">
+              <div class="field">
+                <label for="hourlyRate" data-i18n="label_hourly" data-i18n-html="true">Valor/hora pretendido (R$) <span class="req">*</span></label>
+                <div class="input-prefix">
+                  <span class="prefix">R$</span>
+                  <input type="number" id="hourlyRate" name="hourlyRate" min="0" step="0.01" placeholder="0,00" required />
+                </div>
+                <small class="error-msg"></small>
+              </div>
+              <div class="field">
+                <label for="monthlyExpectation" data-i18n="label_monthly">Pretensão mensal (CLT/PJ) — opcional</label>
+                <div class="input-prefix">
+                  <span class="prefix">R$</span>
+                  <input type="number" id="monthlyExpectation" name="monthlyExpectation" min="0" step="0.01" placeholder="0,00" />
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <label for="notes" data-i18n="label_notes">Observações adicionais</label>
+              <textarea id="notes" name="notes" rows="3" placeholder="Algo mais que gostaria de nos contar?" data-i18n-ph="ph_notes"></textarea>
+            </div>
+            <div class="field field-check">
+              <label class="consent">
+                <input type="checkbox" id="consent" name="consent" required />
+                <span data-i18n="consent_text" data-i18n-html="true">Autorizo o uso dos meus dados para fins de recrutamento, conforme a LGPD. <span class="req">*</span></span>
+              </label>
+              <small class="error-msg" id="consentError"></small>
+            </div>
+          </fieldset>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-lg" id="submitBtn" data-i18n="btn_submit">Enviar cadastro</button>
+            <button type="reset" class="btn btn-ghost btn-lg" data-i18n="btn_reset">Limpar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== SUCCESS MODAL ===== -->
+  <div class="modal-overlay" id="successModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-icon">
+        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3 id="modalTitle" data-i18n="modal_title">Cadastro enviado com sucesso!</h3>
+      <p data-i18n="modal_body">Obrigado pelo seu interesse em fazer parte da KPI Engenharia. Recebemos seus dados e entraremos em contato caso haja uma oportunidade alinhada ao seu perfil.</p>
+      <button type="button" class="btn btn-primary" id="modalClose" data-i18n="modal_close">Fechar</button>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="logo.png" alt="KPI Engenharia" class="footer-logo" />
+      </div>
+      <p class="footer-tag" data-i18n="footer_tag">Soluções completas em engenharia industrial com precisão técnica e integração total.</p>
+      <p class="footer-copy">© <span id="year"></span> KPI Engenharia. <span data-i18n="footer_rights">Todos os direitos reservados.</span></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
